@@ -1,0 +1,353 @@
+@media(max-width: 1030px) {
+    .logo {
+        width: 70%;
+        padding-left: 1rem;
+    }
+    .logo img {
+        width: 30%;
+    }
+    .mobile-nav {
+        width: 30%;
+    }
+    .mobile-nav {
+        display: flex;
+    }
+    .menu {
+        position: fixed;
+        background-color: #000;
+        height: 100vh;
+        width: 100%;
+        left: -110%;
+        top: 0;
+        /*z-index: 1000;*/
+        flex-direction: column;
+        padding: 2rem;
+        transition: all 0.4s cubic-bezier(.92,.7,.45,1.08);
+         padding-top: 5rem;
+    }
+    .menu.active {
+        left: 0;
+    }
+    .main-menu {
+        width: 100%;
+    }
+    .second-menu {
+        width: 100%;
+    }
+    .menu ul {
+        flex-direction: column;
+        gap: 1.4rem;
+    }
+    .menu ul li a {
+        font-size: 1.3rem;
+    }
+    .second-menu ul {
+        gap: 1.4rem;
+        margin-top: 1.4rem;
+    }
+    .second-menu ul li:last-child {
+        margin-top: 0.5rem;
+    }
+    .second-menu ul li:last-child a {
+        padding: 0.3rem 1.5rem;
+        font-size: 1.1rem;
+    }
+    .close-menu {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+        cursor: pointer;
+    }
+    .close-menu i {
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+    }
+    .home-hero {
+        height: 90vh;
+        background: url("../media/home-hero-mobile.png");
+        background-size: cover;
+        
+    }
+    .home-hero p {
+        font-size: 0.9rem;
+    }
+    .home-hero img {
+        display: none;
+    }
+    .home-hero-content, .games-hero-content, .how-to-play-hero-content{
+        width: 100%;
+    }
+    .home-hero-content, .games-hero-content, .how-to-play-hero-content {
+        padding: 1rem;
+    } 
+    .home-hero-content h1, .games-hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .most-popular-container h2, .dive-into-content h3, .game-recomendation-container h3, .most-played-games-main h3, .exp-main h4, .games-screenshots h4, .how-to-play-hero-content h1, .faq-main h3 {
+        font-size: 1.7rem;
+    }
+    .most-popular {
+        margin: 0;
+        padding: 0;
+        margin-top: 2rem;
+    }
+    .most-popular-wrapper {
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    .most-popularbox {
+        width: 100%;
+    }
+    .dive-into-container {
+        flex-direction: column;
+    }
+    .dive-into-img {
+        width: 100%;
+        padding: 0;
+    }
+    .dive-into-content {
+        padding: 0;
+        width: 100%;
+    }
+    .dive-into-content a, .dive-into-content a:last-child{
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+    .game-recomendation-container h3 {
+        width: 100%;
+    }
+    .game-recomendation {
+        padding: 0;
+    }
+    .game-recomendation-box {
+        width: 100%;
+    }
+    .game-recomendation-box h4 {
+        font-size: 1.2rem;
+    } 
+    .game-recomendation-box span {
+        font-size: 0.85rem;
+    }
+    .game-recomendation-box p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    .game-recomendation-box a {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+    }
+    .most-played-games-main p {
+        width: 100%;
+        margin-left: 0;
+    }
+    .most-played-games-wrapper {
+        margin-top: 30px;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .most-played-games {
+        width: 100%;
+    }
+    .most-played-games:nth-child(2) {
+        margin: 0;
+    }
+    .most-played-games:nth-child(3) {
+        margin: 0;
+    }
+    .services-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+    .service-box {
+        width: 100%;
+    }
+    .copyright-container {
+        flex-direction: column;
+    }
+    .copy {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+    .copyright {
+        padding: 1rem 0;
+    }
+    .messager {
+        width: 15%;
+    }
+    .most-played-games-main {
+        overflow: hidden;
+    }
+    .games-hero {
+        height: 90vh;
+        background: url("../media/games-hero-mobile.png");
+        background-size: cover;
+    }
+    .games-hero p {
+        font-size: 0.9rem;
+    }
+    .games-hero img {
+        display: none;
+    }
+    .games-main-filter ul {
+        flex-direction: column;
+    }
+    .games-filter-box ul {
+        gap: 1rem;
+    }
+    .game-box {
+        width: 100%;
+    }
+    .games-filter-body-container {
+        padding: 1rem;
+    }
+    .games-filter-box-img {
+        gap: 1rem;
+        padding: 0;
+    }
+    .games-screenshots-container {
+        flex-wrap: wrap;
+        padding: 0 2rem;
+        
+    }
+    .games-screenshot-box {
+        width: 100%;
+    }
+    .how-to-play-hero {
+        height: 90vh;
+        /*background-color:  #0E113D;*/
+        background: url("../media/play-games-hero-mobile.png");
+        background-size: cover;
+    } 
+    .how-to-play-hero img {
+        display: none;
+    }
+    .download-fb-container h2 {
+        font-size: 2rem;
+    }
+    .play-steps-container img {
+        top: 50%;
+    }
+    .download-fb-container {
+        padding: 2rem 0;
+        padding-bottom: 5rem;
+    } 
+    .download-fb-container p  {
+        width: 80%;
+    }
+    .play-steps-wrapper {
+        flex-wrap: wrap;
+    }
+    .play-steps {
+        width: 150px;
+        height: 150px;
+    } 
+    .play-steps h4 {
+        font-size: 1.2rem;
+    } 
+    .play-steps p {
+        font-size: 1rem;
+    }
+    .play-steps-wrapper {
+        gap: 1.3rem;
+    }
+    .need-help {
+        padding: 1rem;
+        overflow: hidden;
+    }
+    .need-help a {
+        display: block;
+        width: 80%;
+    }
+    .need-help p {
+        width: 100%;
+    }
+    .contact-hero-content p {
+        width: 100%;
+    }
+    .contact-hero {
+        height: 90vh;
+        background: url("../media/contact-hero-mobile.png");
+        background-size: cover;
+    }
+    .contact-hero-content h1 {
+        font-size: 2.4rem;
+    } 
+    .contact-hero img {
+        display: none;
+    }
+
+    .desk-faq {
+        display: none;
+    }
+    .contact-mail-container {
+        width: 90%;
+        margin: auto auto;
+    }
+    .contact-mail a {
+        font-size: 1rem;
+        width: 90%;
+    }
+    .contact-form-left {
+        width: 100%;
+        padding-top: 2rem;
+    }
+    .contact-form-right {
+        padding: 1rem;
+        width: 100%;
+    }
+    .contact-form-right form input {
+        width: 96%;
+    }
+    .contact-form-main-container {
+        flex-direction: column;
+    }
+    .mobile-faq {
+        display: block;
+    }
+    .mobile-faq li {
+        cursor: pointer;
+        font-size: 1.05rem;
+        padding: 0.8rem 1rem;
+        border: 2px solid #7A7A7A;
+        margin: 1rem 0;
+        transition: all 0.3s ease-in-out;
+        color: #2A0030;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        
+    }
+     .mobile-faq li span {
+         width: 90%;
+     }
+     .mobile-faq li.active {
+         background-color: #FFC71E;
+        color: #fff;
+        border: 2px solid transparent;
+     }
+      .mobile-faq li i {
+          width: 15%;
+          font-size: 1.5rem;
+          text-align: right;
+          position: relative;
+          transition: all 0.4s ease-in-out;
+      }
+      .mobile-faq li.active i {
+          transform: rotate(-45deg);
+      }
+    .mobile-faq-ans p {
+        font-size: 0.95rem;
+    }
+    .mobile-faq-ans {
+        height: 0px;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+    .mobile-faq-ans.active {
+        height: auto;
+        overflow: auto;
+    }
+    /*closed */
+}

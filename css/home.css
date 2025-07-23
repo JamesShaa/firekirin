@@ -1,0 +1,133 @@
+.home-hero {
+    position: relative;
+}
+
+.home-hero-content {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    max-width: 600px;
+    min-width: 260px;
+    z-index: 2;
+}
+
+.home-hero-content > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+}
+
+.home-hero-content h1,
+.home-hero-content .bonus-highlight,
+.home-hero-content .hero-buttons {
+    text-align: left;
+    width: 100%;
+}
+
+.hero-blur-box {
+    background: rgba(30, 30, 30, 0.45);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 24px;
+    padding: 40px 48px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    min-width: 320px;
+    max-width: 600px;
+}
+
+.banner-headline {
+    font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 3.2rem;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    margin-bottom: 0.5em;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.banner-bonus {
+    font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 2.7rem;
+    color: #FFC700;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    margin-bottom: 0.7em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2em;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.7em;
+}
+
+.banner-btn {
+    font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    padding: 18px 38px;
+    border-radius: 32px;
+    transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s, filter 0.18s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+.banner-btn:hover {
+    transform: scale(1.09);
+    box-shadow: 0 0 18px 4px #FFD700, 0 4px 16px rgba(0,0,0,0.18);
+    filter: brightness(1.10);
+}
+
+@media (max-width: 600px) {
+    .home-hero-content {
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 16px;
+    }
+    .home-hero-content > div {
+        padding: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero-blur-box {
+        padding: 18px 6px;
+        border-radius: 14px;
+        gap: 12px;
+    }
+    .banner-headline {
+        font-size: 2rem;
+    }
+    .banner-bonus {
+        font-size: 1.2rem;
+    }
+    .banner-btn {
+        font-size: 1rem;
+        padding: 12px 16px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.7em;
+    }
+} 
