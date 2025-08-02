@@ -11,23 +11,23 @@
     max-width: 600px;
     min-width: 260px;
     z-index: 2;
+    padding: 0 40px;
 }
 
 .home-hero-content > div {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    padding-left: 0;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
     width: 100%;
+    text-align: center;
 }
 
 .home-hero-content h1,
 .home-hero-content .bonus-highlight,
 .home-hero-content .hero-buttons {
-    text-align: left;
+    text-align: center;
     width: 100%;
 }
 
@@ -46,6 +46,47 @@
     gap: 22px;
     min-width: 320px;
     max-width: 600px;
+    width: 100%;
+}
+
+/* Headline Drop Animation Keyframes */
+@keyframes headlineDrop {
+    0% {
+        transform: translateY(-100px) scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(10px) scale(1.1);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(-5px) scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes headlineBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes headlineGlow {
+    0%, 100% {
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+        color: #fff;
+    }
+    50% {
+        text-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 2px 2px 8px rgba(0,0,0,0.4);
+        color: #FFD700;
+    }
 }
 
 .banner-headline {
@@ -57,6 +98,29 @@
     margin-bottom: 0.5em;
     text-align: center;
     border-radius: 12px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Bonus Text Animation Keyframes */
+@keyframes bonusPulse {
+    0%, 100% {
+        transform: scale(1);
+        color: #FFC700;
+    }
+    50% {
+        transform: scale(1.15);
+        color: #FFD700;
+    }
+}
+
+@keyframes bonusGlow {
+    0%, 100% {
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 2px 2px 8px rgba(0,0,0,0.4);
+    }
 }
 
 .banner-bonus {
@@ -68,6 +132,8 @@
     margin-bottom: 0.7em;
     margin-top: 0.5em;
     text-align: center;
+    animation: bonusPulse 2s ease-in-out infinite, bonusGlow 3s ease-in-out infinite;
+    transition: all 0.3s ease-in-out;
 }
 
 .hero-buttons {
@@ -75,8 +141,51 @@
     flex-direction: row;
     gap: 1.2em;
     justify-content: center;
+    align-items: center;
     width: 100%;
     margin-top: 0.7em;
+}
+
+/* Button Animation Keyframes */
+@keyframes buttonPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+}
+
+@keyframes buttonGlow {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.15);
+    }
+}
+
+@keyframes buttonShake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-2px);
+    }
+    75% {
+        transform: translateX(2px);
+    }
+}
+
+@keyframes buttonBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
 }
 
 .banner-btn {
@@ -85,13 +194,103 @@
     font-size: 1.2rem;
     padding: 18px 38px;
     border-radius: 32px;
-    transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s, filter 0.18s;
+    transition: all 0.3s cubic-bezier(.4,2,.6,1);
     box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    position: relative;
+    overflow: hidden;
+    animation: buttonPulse 2s ease-in-out infinite;
 }
+
+.banner-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.banner-btn:hover::before {
+    left: 100%;
+}
+
 .banner-btn:hover {
-    transform: scale(1.09);
-    box-shadow: 0 0 18px 4px #FFD700, 0 4px 16px rgba(0,0,0,0.18);
-    filter: brightness(1.10);
+    transform: scale(1.12);
+    box-shadow: 0 0 25px 8px #FFD700, 0 8px 24px rgba(0,0,0,0.3);
+    filter: brightness(1.15);
+    animation: buttonGlow 0.6s ease-in-out infinite;
+}
+
+.banner-btn:active {
+    transform: scale(0.98);
+    animation: buttonShake 0.3s ease-in-out;
+}
+
+/* Specific animations for each button */
+.hero-btn-primary {
+    animation: buttonPulse 2s ease-in-out infinite, buttonBounce 3s ease-in-out infinite;
+}
+
+.hero-btn-secondary {
+    animation: buttonPulse 2s ease-in-out infinite 0.5s, buttonBounce 3s ease-in-out infinite 1s;
+}
+
+.banner-subheading {
+    font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: #FF6B35;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    margin-top: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: urgentPulse 2s ease-in-out infinite;
+    position: relative;
+}
+
+.banner-subheading::before {
+    content: '🔥';
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    animation: warningBlink 1.5s ease-in-out infinite;
+}
+
+.banner-subheading::after {
+    content: '🔥';
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    animation: warningBlink 1.5s ease-in-out infinite;
+}
+
+@keyframes urgentPulse {
+    0%, 100% {
+        transform: scale(1);
+        color: #FF6B35;
+    }
+    50% {
+        transform: scale(1.05);
+        color: #FF4500;
+    }
+}
+
+@keyframes warningBlink {
+    0%, 100% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(-50%) scale(1.1);
+    }
 }
 
 @media (max-width: 600px) {
@@ -107,6 +306,8 @@
     }
     .home-hero-content > div {
         padding: 0;
+        align-items: center;
+        text-align: center;
     }
 }
 
@@ -127,7 +328,18 @@
         padding: 12px 16px;
     }
     .hero-buttons {
-        flex-direction: column;
+        flex-direction: row;
         gap: 0.7em;
+        align-items: center;
+    }
+    .banner-subheading {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+    .banner-subheading::before,
+    .banner-subheading::after {
+        font-size: 0.8rem;
+        left: -20px;
+        right: -20px;
     }
 } 

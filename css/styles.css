@@ -140,15 +140,367 @@ p {
 /* footer ends here  */
 
 /* home page css starts here  */
+
+/* Impressive Banner Animation Keyframes */
+@keyframes casinoGlow {
+    0%, 100% { 
+        filter: brightness(1) saturate(1) hue-rotate(0deg);
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    25% { 
+        filter: brightness(1.2) saturate(1.1) hue-rotate(3deg);
+        transform: scale(1.03) rotate(0.2deg);
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+    }
+    50% { 
+        filter: brightness(1.4) saturate(1.2) hue-rotate(5deg);
+        transform: scale(1.05) rotate(-0.1deg);
+        box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+    }
+    75% { 
+        filter: brightness(1.1) saturate(1.05) hue-rotate(2deg);
+        transform: scale(1.02) rotate(0.1deg);
+        box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+    }
+}
+
+@keyframes casinoShimmer {
+    0% {
+        background-position: -200% center;
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        background-position: 200% center;
+        opacity: 0.3;
+    }
+}
+
+@keyframes casinoSparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+    25% {
+        opacity: 1;
+        transform: scale(1) rotate(90deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1) rotate(180deg);
+    }
+    75% {
+        opacity: 0.6;
+        transform: scale(0.9) rotate(270deg);
+    }
+}
+
+@keyframes casinoPulse {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+
+
+@keyframes bannerGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 rgba(255, 215, 0, 0);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 69, 0, 0.4);
+    }
+}
+
+@keyframes bannerShimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes urgentPulse {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes warningBlink {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(0.98);
+    }
+}
+
+@keyframes countdownPulse {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-30px) scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-60px) scale(0.3);
+    }
+}
+
 .home-hero {
     position: relative;
     border-bottom: 1px solid rgba(132, 215, 254, 0.2);
     overflow: hidden;
 }
+
+.home-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 215, 0, 0.25) 0%, 
+        rgba(255, 140, 0, 0.25) 25%, 
+        rgba(255, 69, 0, 0.25) 50%, 
+        rgba(255, 215, 0, 0.25) 75%, 
+        rgba(255, 140, 0, 0.25) 100%);
+    animation: casinoGlow 4s ease-in-out infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.home-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 215, 0, 0.2) 25%, 
+        rgba(255, 255, 255, 0.4) 50%, 
+        rgba(255, 215, 0, 0.2) 75%, 
+        transparent 100%);
+    background-size: 200% 100%;
+    animation: casinoShimmer 5s ease-in-out infinite;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.home-hero::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 0;
+    height: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
 .home-hero img {
     display: block;
     margin-bottom: -3rem;
+    position: relative;
+    z-index: 3;
+    animation: bannerImagePulse 6s ease-in-out infinite;
 }
+
+@keyframes bannerImagePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Falling Casino Elements */
+.falling-element {
+    position: absolute;
+    font-size: 1.8rem;
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    animation: fallingDrop 3s linear infinite;
+    z-index: 4;
+    pointer-events: none;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.6));
+}
+
+@keyframes fallingDrop {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px) rotate(0deg);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(-80px) rotate(45deg);
+    }
+    90% {
+        opacity: 0.8;
+        transform: translateY(80px) rotate(315deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100px) rotate(360deg);
+    }
+}
+
+/* Button Animation Keyframes */
+@keyframes buttonPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+}
+
+@keyframes buttonGlow {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.15);
+    }
+}
+
+@keyframes buttonShake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-2px);
+    }
+    75% {
+        transform: translateX(2px);
+    }
+}
+
+@keyframes buttonBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Banner Button Animations */
+.banner-btn {
+    font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    padding: 18px 38px;
+    border-radius: 32px;
+    transition: all 0.3s cubic-bezier(.4,2,.6,1);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    position: relative;
+    overflow: hidden;
+    animation: buttonPulse 2s ease-in-out infinite;
+}
+
+.banner-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.banner-btn:hover::before {
+    left: 100%;
+}
+
+.banner-btn:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 25px 8px #FFD700, 0 8px 24px rgba(0,0,0,0.3);
+    filter: brightness(1.15);
+    animation: buttonGlow 0.6s ease-in-out infinite;
+}
+
+.banner-btn:active {
+    transform: scale(0.98);
+    animation: buttonShake 0.3s ease-in-out;
+}
+
+/* Specific animations for each button */
+.hero-btn-primary {
+    animation: buttonPulse 2s ease-in-out infinite, buttonBounce 3s ease-in-out infinite;
+}
+
+.hero-btn-secondary {
+    animation: buttonPulse 2s ease-in-out infinite 0.5s, buttonBounce 3s ease-in-out infinite 1s;
+}
+
+.falling-777-1 {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.falling-dollar-1 {
+    left: 25%;
+    animation-delay: 0.5s;
+}
+
+.falling-dice-1 {
+    left: 40%;
+    animation-delay: 1s;
+}
+
+.falling-777-2 {
+    left: 55%;
+    animation-delay: 1.5s;
+}
+
+.falling-dollar-2 {
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.falling-dice-2 {
+    left: 85%;
+    animation-delay: 2.5s;
+}
+
+.falling-777-3 {
+    left: 15%;
+    animation-delay: 3s;
+}
+
+.falling-dollar-3 {
+    left: 80%;
+    animation-delay: 3.5s;
+}
+
+
 .home-hero-content {
     width: 50%;
     padding-left: 4rem;
